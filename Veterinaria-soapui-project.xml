@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c83eeca5-e8a5-4175-911c-45fce5a541b3" activeEnvironment="Default" name="Veterinaria" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="891207ac-bb84-4bf5-88d1-f684340846d7" wsaVersion="NONE" name="VeterinariaEndpointImplServiceSoapBinding" type="wsdl" bindingName="{http://endpoint.view.feo.pe/}VeterinariaEndpointImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8082/services/VeterinariaDeFeo?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8082/services/VeterinariaDeFeo?wsdl"><con:part><con:url>http://localhost:8082/services/VeterinariaDeFeo?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="VeterinariaEndpointImplService" targetNamespace="http://endpoint.view.feo.pe/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://endpoint.view.feo.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://endpoint.view.feo.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="UsuarioRegistroModelRequest" type="tns:usuarioRegistroModelRequest"/>
+      <xs:element name="UsuarioRegistroModelResponse" type="tns:usuarioRegistroModelResponse"/>
+      <xs:element name="registrarUsuario" type="tns:registrarUsuario"/>
+      <xs:element name="registrarUsuarioResponse" type="tns:registrarUsuarioResponse"/>
+      <xs:complexType name="registrarUsuario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:usuarioRegistroModelRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="usuarioRegistroModelRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="nombres" type="xs:string"/>
+          <xs:element minOccurs="0" name="apellidos" type="xs:string"/>
+          <xs:element minOccurs="0" name="correo" type="xs:string"/>
+          <xs:element minOccurs="0" name="dni" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="registrarUsuarioResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UsuarioRegistroModelResponse" type="tns:usuarioRegistroModelResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="usuarioRegistroModelResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigo" type="xs:string"/>
+          <xs:element minOccurs="0" name="observacion" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="registrarUsuario">
+    <wsdl:part element="tns:registrarUsuario" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registrarUsuarioResponse">
+    <wsdl:part element="tns:registrarUsuarioResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="VeterinariaEndpoint">
+    <wsdl:operation name="registrarUsuario">
+      <wsdl:input message="tns:registrarUsuario" name="registrarUsuario"></wsdl:input>
+      <wsdl:output message="tns:registrarUsuarioResponse" name="registrarUsuarioResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VeterinariaEndpointImplServiceSoapBinding" type="tns:VeterinariaEndpoint">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="registrarUsuario">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="registrarUsuario">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="registrarUsuarioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VeterinariaEndpointImplService">
+    <wsdl:port binding="tns:VeterinariaEndpointImplServiceSoapBinding" name="VeterinariaEndpointImplPort">
+      <soap:address location="http://localhost:8082/services/VeterinariaDeFeo"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8082/services/VeterinariaDeFeo</con:endpoint></con:endpoints><con:operation id="84e71662-14c0-4670-86f5-6f7e4f51cc53" isOneWay="false" action="" name="registrarUsuario" bindingOperationName="registrarUsuario" type="Request-Response" outputName="registrarUsuarioResponse" inputName="registrarUsuario" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="30554742-f947-4e1d-aab3-4fc28d565a70" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8082/services/VeterinariaDeFeo</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:end="http://endpoint.view.feo.pe/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <end:registrarUsuario>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <nombres>Alejandra Maria</nombres>
+            <!--Optional:-->
+            <apellidos>Hallasi Montesinos</apellidos>
+            <!--Optional:-->
+            <correo>alejandra@gmail.com</correo>
+            <!--Optional:-->
+            <dni>70555878</dni>
+         </arg0>
+      </end:registrarUsuario>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://endpoint.view.feo.pe/VeterinariaEndpoint/registrarUsuario"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

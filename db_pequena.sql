@@ -31,7 +31,3 @@ create table mascota
     foreign key(tipo_mascota) references tipo_mascota(id),
     foreign key(dueno) references usuario(id)
 );
-
-select * from usuario;
-select * from tipo_mascota;
-select * from mascota;
