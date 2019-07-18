@@ -12,11 +12,13 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import pe.feo.view.endpoint.VeterinariaEndpoint;
+
 @Configuration
 public class CXFConfig {
 	
-	//@Autowired
-	//private VeterinariaEndpoint veterinariaEndpoint;
+	@Autowired
+	private VeterinariaEndpoint veterinariaEndpoint;
 
 	@Bean
 	public ServletRegistrationBean dispatcherServlet() {
@@ -27,7 +29,7 @@ public class CXFConfig {
 	public SpringBus springBus() {
 		return new SpringBus();
 	}
-/*
+
 	@Bean
 	public Endpoint endpoint() {
 		EndpointImpl endpoint = new EndpointImpl(springBus(), veterinariaEndpoint);
@@ -35,5 +37,5 @@ public class CXFConfig {
 		endpoint.publish("/VeterinariaDeFeo");
 		return endpoint;
 	}
-*/
+
 }
